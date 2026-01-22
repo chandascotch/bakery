@@ -1,44 +1,16 @@
-/* Global styles */
+/* --- Global Styles --- */
 body {
     font-family: system-ui, -apple-system, sans-serif;
     scroll-behavior: smooth;
     padding-top: 72px;
-    /* for fixed navbar */
+    /* For fixed navbar */
+    background-color: #fcf9f5;
 }
 
-/* Hero section */
-#home.hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url('chandascotch.png') center/cover no-repeat;
-    min-height: 85vh;
-    display: flex;
-    align-items: center;
-}
-
-#home.hero h3 {
-    font-size: 3.2rem;
-    font-weight: 800;
-    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
-    letter-spacing: -1px;
-}
-
-#home.hero p {
-    font-size: 1.3rem;
-    max-width: 700px;
-    margin: 0 auto 30px;
-    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
-    opacity: 0.95;
-}
-
-/* Navbar Customization */
+/* --- Navigation --- */
 .navbar {
     padding: 10px 0;
     background-color: #fcf9f5 !important;
-}
-
-.navbar-brand {
-    font-size: 1.5rem;
-    letter-spacing: 0.5px;
 }
 
 .navbar-brand img {
@@ -47,7 +19,6 @@ body {
 
 .nav-link {
     font-size: 1.1rem;
-    margin-left: 10px;
     color: #555 !important;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -55,30 +26,30 @@ body {
 
 .nav-link:hover {
     color: #d10000 !important;
-    /* Brand red hover */
 }
 
-/* About Section */
+/* --- Hero Section --- */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('assets/chandascotch.png') center/cover no-repeat;
+    min-height: 85vh;
+}
+
+.hero h3 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* --- About Section --- */
 .about-section {
-    padding: 100px 0;
-    background-color: #fcf9f5;
-    color: #333;
-}
-
-.about-text h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-}
-
-.about-text p {
-    font-size: 1.1rem;
-    line-height: 1.4;
-    color: #555;
+    padding: 80px 0;
 }
 
 .about-img-container img {
     box-shadow: 15px 15px 0px #efebe5;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s ease;
+    object-fit: cover;
 }
 
 .about-img-container img:hover {
@@ -88,90 +59,73 @@ body {
 .mission-box {
     border-left: 4px solid #d10000;
     padding-left: 20px;
-    margin-top: 30px;
 }
 
-/* Menu items */
-.menu-item img {
+/* --- Menu Section --- */
+.category-section h3 {
+    color: #333;
+    letter-spacing: 1px;
+}
+
+/* Image handling for uniform cards */
+.menu-item img,
+.card img {
+    width: 100%;
+    height: 160px;
+    /* Mobile height */
     object-fit: cover;
-    height: 240px;
 }
 
-#menu p {
-    font-size: 1.2rem;
+@media (min-width: 768px) {
+
+    .menu-item img,
+    .card img {
+        height: 220px;
+        /* Desktop height */
+    }
 }
 
-/* Buttons */
-.btn-light {
-    background-color: #ffffff;
-    padding: 15px 40px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+.card {
+    border: none;
+    transition: transform 0.2s ease;
 }
 
-.btn-light:hover {
-    background-color: #fcf9f5;
-    transform: translateY(-3px);
+.card:hover {
+    transform: translateY(-5px);
 }
 
-/* Social Icon Hover Effects */
-.hover-fb,
-.hover-ig,
-.hover-yt {
-    transition: transform 0.3s ease, color 0.3s ease;
-    display: inline-block;
-    text-decoration: none;
+.card-title {
+    font-size: 0.95rem;
+    font-weight: 600;
 }
 
-.hover-fb:hover,
-.hover-ig:hover,
-.hover-yt:hover {
-    transform: scale(1.2);
+/* --- Buttons --- */
+.btn-primary {
+    background-color: #d10000;
+    border-color: #d10000;
+    padding: 10px 25px;
+    font-weight: 600;
 }
 
+.btn-primary:hover {
+    background-color: #a00000;
+    border-color: #a00000;
+}
+
+/* --- Social Icons --- */
 .hover-fb:hover {
     color: #1877F2 !important;
 }
 
-/* Facebook Blue */
 .hover-ig:hover {
     color: #E4405F !important;
 }
 
-/* Instagram Pink */
 .hover-yt:hover {
     color: #FF0000 !important;
 }
 
-/* YouTube Red */
-
-/* Responsive Design */
-@media (max-width: 767.98px) {
-    #home.hero {
-        min-height: 70vh;
-        text-align: center;
-    }
-
-    #home.hero h1 {
-        font-size: 3rem;
-    }
-
-    .menu-item img {
-        height: 220px;
-    }
-}
-
-#location p {
-    font-size: 1.3rem;
-}
-
-#contact p {
-    font-size: 1.2rem;
-}
-
-/* WhatsApp Floating Button */
+/* --- WhatsApp Button --- */
 .whatsapp-float {
     position: fixed;
     width: 50px;
@@ -199,6 +153,8 @@ body {
     color: #fff;
 }
 
+
+
 /* Tooltip text for the button */
 .whatsapp-float .tooltip-text {
     visibility: hidden;
@@ -221,20 +177,22 @@ body {
     opacity: 1;
 }
 
+
+
 /* Subtle pulse animation */
 @keyframes pulse-whatsapp {
     0% {
         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
     }
-
     70% {
         box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
     }
-
     100% {
         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
     }
 }
+
+
 
 /* Ensure button doesn't cover content on very small screens */
 @media (max-width: 480px) {
@@ -244,5 +202,15 @@ body {
         bottom: 20px;
         right: 20px;
         font-size: 30px;
+    }
+}
+
+/* --- Responsive Helpers --- */
+@media (max-width: 768px) {
+    .hero h3 {
+        font-size: 2.2rem;
+    }
+    .about-section {
+        padding: 50px 0;
     }
 }
